@@ -4,3 +4,53 @@
 <img [src]="person.photo" alt="Luz" width="150"> <br>
 <button [disabled]="verdadero">{{ buttonLabel }}</button>
 <button (click)="toggleButton()" >Toggle</button>
+
+<h2>Eventos</h2>
+
+<div class="box" (scroll)="onScroll($event)">
+  <p>
+    Un texto random <br> Un texto random <br> Un texto random <br>
+    Un texto random <br> Un texto random <br> Un texto random <br>
+    Un texto random <br> Un texto random <br> Un texto random <br>
+    Un texto random <br> Un texto random <br> Un texto random <br>
+    Un texto random <br> Un texto random <br> Un texto random <br>
+    Un texto random <br> Un texto random <br> Un texto random <br>
+  </p>
+</div>
+
+<h2>Basic Form</h2>
+
+<p>Nombre: {{ person.name }}</p>
+<input type="text" [(ngModel)]="person.name" />
+
+<p> Valor: {{ variable }} </p>
+<input type="text" [(ngModel)]="variable" >
+
+<h3>Condition</h3>
+
+<button (click)="mostrar()">Cambio de bloque</button>
+
+<div *ngIf="showCondition; else elseBlock">Bloque visible en true</div>
+<ng-template #elseBlock>
+  <p>Este Otro de muestra en false</p>
+</ng-template>
+
+
+<h3>ngFor</h3>
+
+<p>Un listado de nombres</p>
+<input type="text" required [(ngModel)]="newName" >
+<button (click)="addName()">Añadir</button>
+<ul>
+  <li *ngIf="names.length === 0" style="list-style: none;" >Ya no hay</li>
+  <li *ngFor="let name of names; index as i">
+    {{ name }}
+    <button (click)="deleteName(i)" >Borrar</button>
+  </li>
+</ul>
+
+<div *ngFor="let product of products">
+  <img [src]="product.image" alt="image" width="250">
+  <h2>{{ product.price }}</h2>
+  <p>{{ product.name }}</p>
+</div>
