@@ -1,3 +1,10 @@
+<h2>Formulario</h2>
+
+<form #myForm="ngForm">
+
+</form>
+
+
 <h1 class="text-info">Título de prueba : {{ age }} </h1>
 
 <h3>Hola, soy {{ name }} y tengo {{ age }}</h3>
@@ -49,8 +56,55 @@
   </li>
 </ul>
 
-<div *ngFor="let product of products">
-  <img [src]="product.image" alt="image" width="250">
-  <h2>{{ product.price }}</h2>
-  <p>{{ product.name }}</p>
+<h3>Products</h3>
+<div class="product--grid" >
+  <div *ngFor="let product of products">
+    <img [src]="product.image" alt="image" width="250">
+    <h2>{{ product.price }}</h2>
+    <p>{{ product.name }}</p> 
+  </div>
 </div>
+
+<h3>ngSwitch</h3>
+<input type="text" [(ngModel)]="persona[0].name" >
+<div [ngSwitch]="persona[0].name">
+  <p *ngSwitchCase="'Juan'">
+    La persona es Juan
+  </p>
+  <p *ngSwitchCase="'Miguel'">
+    Su nombre es Mikrael
+  </p>
+  <p *ngSwitchDefault>
+    No se encuentra la persona.
+  </p>
+</div>
+
+<h3>ngClass and ngStyle</h3>
+<input type="text" required #nameInput4="ngModel" [(ngModel)]="persona[2].name" >
+<hr class="line-error" 
+  [ngClass]="{
+    'valid': nameInput4.valid,
+    'invalid': nameInput4.invalid
+  }"
+/>
+<p class="message-error" [class.invalid]="nameInput4.invalid">
+  El campo es requerido
+</p>
+
+
+<h3>Class and Style</h3>
+<input type="text" required #nameInput2="ngModel" [(ngModel)]="persona[0].name">
+<p class="message-error" [class.invalid]="nameInput2.invalid" >El campo es requerido</p>
+
+<input type="text" required #nameInput3="ngModel" [(ngModel)]="persona[1].name">
+<p [style.display]="nameInput3.invalid ? 'none' : 'block'" >Llename y me aclaro</p>
+
+<div class="styles">
+  <div>
+    <input type="range" id="size" name="size" [(ngModel)]="widthImg" min="100" max="480">
+  </div>
+  <div>
+    <img [src]="persona[0].photo" alt="" [style.width.px]="widthImg">
+  </div>
+</div>
+

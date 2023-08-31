@@ -9,9 +9,18 @@ import { Product } from './models/product.model';
 export class AppComponent {
   title = 'thetAngular';
 
+  register = {
+    name: '',
+    email: '',
+    pass: '',
+  }
+
+
   public name: string | number = 'Miguel';
   age:number = 0;
-  names: any[] = ['Nico', 'Juli', 'Migui', 'Yenni', 3, 'Rossy', 'Laura', 'Peter'];
+  names: any[] = ['Nico', 'Juli', 'Migui', 'Yenni', "Three", 'Rossy', 'Laura', 'Peter'];
+
+  widthImg: number = 100;
 
   products: Product[] = [
     {
@@ -28,7 +37,22 @@ export class AppComponent {
       name: 'Music record',
       price: 7846,
       image: './assets/images/album.jpg'
-    }
+    },
+      {
+        name: 'Segundo libro',
+        price: 666,
+        image: './assets/images/books.jpg'
+      },
+    {
+      name: 'The Music record',
+      price: 7846,
+      image: './assets/images/album.jpg'
+    },
+    {
+      name: 'The toy',
+      price: 565,
+      image: './assets/images/toy.jpg'
+    },
   ]
 
   verdadero: boolean = true;
@@ -36,10 +60,34 @@ export class AppComponent {
 
   showCondition: boolean = false;
 
+  
+
   person = {
     name: 'Miguel',
     age: 25, 
     photo: 'https://fastly.picsum.photos/id/866/300/300.jpg?hmac=9qmLpcaT9TgKd6PD37aZJZ_7QvgrVFMcvI3JQKWVUIQ'
+  }
+  persona = [
+    {
+      name: 'Miguel',
+      age: 25, 
+      photo: 'https://fastly.picsum.photos/id/866/300/300.jpg?hmac=9qmLpcaT9TgKd6PD37aZJZ_7QvgrVFMcvI3JQKWVUIQ'
+    },
+    {
+      name: 'Juan',
+      age: 25, 
+      photo: 'https://fastly.picsum.photos/id/866/300/300.jpg?hmac=9qmLpcaT9TgKd6PD37aZJZ_7QvgrVFMcvI3JQKWVUIQ'
+    },
+    {
+      name: 'Lucas',
+      age: 33, 
+      photo: 'https://fastly.picsum.photos/id/866/300/300.jpg?hmac=9qmLpcaT9TgKd6PD37aZJZ_7QvgrVFMcvI3JQKWVUIQ'
+    }
+  ]
+  
+  valHR = {
+    valid: this.persona[2].name,
+    invalid: this.persona[2].name
   }
 
   toggleButton() { 
