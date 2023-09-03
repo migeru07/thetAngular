@@ -1,6 +1,9 @@
-<input type="text" [(ngModel)]="imgParent" style="min-width: 500px;" >
+<app-product *ngFor="let product of products" [product]="product"></app-product>
 
+<hr>
+<input type="text" [(ngModel)]="imgParent" style="min-width: 500px;" >
 <app-img [img]="imgParent" (loaded)="onLoaded($event)" ></app-img>
+
 
 
 
