@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-img',
@@ -7,8 +7,24 @@ import { Component, Input } from '@angular/core';
 })
 export class ImgComponent {
 
-  @Input()  img: string = 'Valor del hijo'
+  @Input()  img: string = 'Valor del hijo';
 
+  @Output() loaded = new EventEmitter<Object>();
 
+  imageDefault: string = './../../../assets/images/default.png'
 
+  imgError() {
+    this.img = this.imageDefault;
+  }
+
+  valores = {
+    valorA: 0,
+    valorB: 4,
+    valorC: 5
+  }
+
+  imgLoaded() {
+    console.log('El hijo dice que cargo');
+    this.loaded.emit(this.valores);
+  }
 }

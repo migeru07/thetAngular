@@ -9,6 +9,14 @@ import { Product } from './models/product.model';
 export class AppComponent {
   title = 'thetAngular';
 
+  imgParent = 'https://www.w3schools.com/howto/img_avatar2.png';
+
+  onLoaded(img: Object) {
+    console.log('El Padre dice que el hijo dice que cargo', img);
+  }
+
+
+
   register = {
     name: '',
     email: '',
@@ -60,40 +68,40 @@ export class AppComponent {
 
   showCondition: boolean = false;
 
-  
+
 
   person = {
     name: 'Miguel',
-    age: 25, 
+    age: 25,
     photo: 'https://fastly.picsum.photos/id/866/300/300.jpg?hmac=9qmLpcaT9TgKd6PD37aZJZ_7QvgrVFMcvI3JQKWVUIQ'
   }
   persona = [
     {
       name: 'Miguel',
-      age: 25, 
+      age: 25,
       photo: 'https://fastly.picsum.photos/id/866/300/300.jpg?hmac=9qmLpcaT9TgKd6PD37aZJZ_7QvgrVFMcvI3JQKWVUIQ'
     },
     {
       name: 'Juan',
-      age: 25, 
+      age: 25,
       photo: 'https://fastly.picsum.photos/id/866/300/300.jpg?hmac=9qmLpcaT9TgKd6PD37aZJZ_7QvgrVFMcvI3JQKWVUIQ'
     },
     {
       name: 'Lucas',
-      age: 33, 
+      age: 33,
       photo: 'https://fastly.picsum.photos/id/866/300/300.jpg?hmac=9qmLpcaT9TgKd6PD37aZJZ_7QvgrVFMcvI3JQKWVUIQ'
     }
   ]
-  
+
   valHR = {
     valid: this.persona[2].name,
     invalid: this.persona[2].name
   }
 
-  toggleButton() { 
+  toggleButton() {
     this.verdadero = !this.verdadero;
   }
-  mostrar() { 
+  mostrar() {
     this.showCondition = true;
   }
 
