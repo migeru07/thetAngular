@@ -1,4 +1,9 @@
-<h2>Formulario</h2>
+<app-img></app-img>
+
+
+
+
+<!-- <h2>Formulario</h2>
 
 <form #myForm="ngForm">
 
@@ -61,7 +66,7 @@
   <div *ngFor="let product of products">
     <img [src]="product.image" alt="image" width="250">
     <h2>{{ product.price }}</h2>
-    <p>{{ product.name }}</p> 
+    <p>{{ product.name }}</p>
   </div>
 </div>
 
@@ -81,7 +86,7 @@
 
 <h3>ngClass and ngStyle</h3>
 <input type="text" required #nameInput4="ngModel" [(ngModel)]="persona[2].name" >
-<hr class="line-error" 
+<hr class="line-error"
   [ngClass]="{
     'valid': nameInput4.valid,
     'invalid': nameInput4.invalid
@@ -106,5 +111,5 @@
   <div>
     <img [src]="persona[0].photo" alt="" [style.width.px]="widthImg">
   </div>
-</div>
+</div> -->
 
