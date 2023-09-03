@@ -7,7 +7,19 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 export class ImgComponent {
 
-  @Input()  img: string = 'Valor del hijo';
+  //@Input('img') img: string = '';
+  img: string = '';
+  @Input('img')
+  set changeImg(newImg: string) {
+    this.img = newImg;
+    console.log('La URL cambió', this.img);
+
+  }
+
+  // ngOnChanges(changes: SimpleChanges): void {
+  //   console.log(changes['img'],'cambio la URL');
+  // }
+
 
   @Output() loaded = new EventEmitter<Object>();
 
