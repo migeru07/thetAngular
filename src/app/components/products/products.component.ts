@@ -48,4 +48,11 @@ export class ProductsComponent {
     },
   ]
 
+  total: number = 0;
+  myShoppingCart: Product[] = [];
+
+  onAddToShoppingCart(product: Product) {
+    this.myShoppingCart.push(product);
+    this.total = this.myShoppingCart.reduce((sum, item) => sum + item.price, 0 )
+  }
 }
