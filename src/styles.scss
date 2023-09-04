@@ -2,3 +2,19 @@
 
 /* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap';
+
+@import url(./app/styles/reset.scss);
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&amp;display=swap');
+
+* {
+  font-family: 'Quicksand', sans-serif;
+}
+
+.products--grid {
+  app-img {
+    img {
+      border-radius: 10px;
+    }
+  }
+}

@@ -8,12 +8,16 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ImgComponent } from './components/img/img.component';
 import { ProductComponent } from './components/product/product.component';
+import { ProductsComponent } from './components/products/products.component';
+import { NavComponent } from './components/nav/nav.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ImgComponent,
-    ProductComponent
+    ProductComponent,
+    ProductsComponent,
+    NavComponent
   ],
   imports: [
     FormsModule,
