@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Product } from './models/product.model';
 
 @Component({
   selector: 'app-root',
@@ -11,11 +10,9 @@ export class AppComponent {
 
   imgParent = 'https://www.w3schools.com/howto/img_avatar2.png';
 
-  onLoaded(img: Object) {
+  onLoaded(img: unknown) {
     console.log('El Padre dice que el hijo dice que cargo', img);
   }
-
-
 
   register = {
     name: '',
@@ -23,19 +20,16 @@ export class AppComponent {
     pass: '',
   }
 
-
   public name: string | number = 'Miguel';
-  age:number = 0;
-  names: any[] = ['Nico', 'Juli', 'Migui', 'Yenni', "Three", 'Rossy', 'Laura', 'Peter'];
+  age = 0;
+  names: unknown[] = ['Nico', 'Juli', 'Migui', 'Yenni', "Three", 'Rossy', 'Laura', 'Peter'];
 
-  widthImg: number = 100;
+  widthImg = 100;
 
-  verdadero: boolean = true;
-  buttonLabel: string = 'Presiona este boton';
+  verdadero = true;
+  buttonLabel = 'Presiona este boton';
 
-  showCondition: boolean = false;
-
-
+  showCondition = false;
 
   person = {
     name: 'Miguel',
@@ -77,8 +71,7 @@ export class AppComponent {
     console.log(element.scrollTop);
   }
 
-  variable: string = '';
-
+  variable = '';
   newName = '';
   addName() {
     this.names.push(this.newName);

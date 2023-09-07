@@ -1,5 +1,5 @@
 <!-- <p style="opacity: 0.4;">{{ img }}</p> -->
-<img [src]="img" (load)="imgLoaded()" (error)="imgError()" *ngIf="img ; else elseImg">
+<img [src]="img" (load)="imgLoaded()" (error)="imgError()" *ngIf="img ; else elseImg" alt="Item Image">
 <ng-template #elseImg>
   <img [src]="imageDefault" alt="">
 </ng-template>

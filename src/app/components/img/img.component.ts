@@ -8,20 +8,15 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 export class ImgComponent {
 
   //@Input('img') img: string = '';
-  img: string = '';
-  @Input('img')
+  img = '';
+  @Input()
   set changeImg(newImg: string) {
     this.img = newImg;
     console.log('La URL cambió', this.img);
 
   }
 
-  // ngOnChanges(changes: SimpleChanges): void {
-  //   console.log(changes['img'],'cambio la URL');
-  // }
-
-
-  @Output() loaded = new EventEmitter<Object>();
+  @Output() loaded = new EventEmitter<object>();
 
   imageDefault: string = './../../../assets/images/default.png'
 
