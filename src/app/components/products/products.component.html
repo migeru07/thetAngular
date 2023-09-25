@@ -1,15 +1,17 @@
 <p>Tienes {{ myShoppingCart.length }} productos y la cuenta total es {{ total }}</p>
 <!-- <p>Usando pipes: {{ ('hOlA eN LoWeRCase' | lowercase) | convertVowels }}</p> -->
+<button (click)="toggleProductDetail()" >Ver detalle</button>
 <div class="products--grid">
   <app-product
   *ngFor="let product of products"
   [product]="product"
   (addedProduct)="onAddToShoppingCart($event)"
+  (showProduct)="onShowDetail($event)"
   ></app-product>
 </div>
-<div class="product-detail">
+<div class="product-detail" [class.active]="showProductDetail">
   <div>
-    <button>Close</button>
+    <button (click)="toggleProductDetail()" >Close</button>
     Content
   </div>
 </div>

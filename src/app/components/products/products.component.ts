@@ -12,6 +12,8 @@ export class ProductsComponent implements OnInit {
 
   products: Product[] = [];
 
+
+  showProductDetail = false;
   today = new Date();
   date = new Date(2021,1,21);
 
@@ -28,7 +30,19 @@ export class ProductsComponent implements OnInit {
     })
   }
 
-  
+  toggleProductDetail() {
+    this.showProductDetail = !this.showProductDetail
+  }
+
+  onShowDetail(id: number) {
+    this.productsService.getProduct(id).subscribe(data => {
+      console.log('product', data);
+
+    })
+
+  }
+
+
 
   // products: Product[] = [
   //   {
