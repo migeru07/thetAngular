@@ -1,5 +1,5 @@
 <!-- <img [src]="product.image" width="200" /> -->
-<app-img [changeImg]="product.image"></app-img>
+<app-img *ngIf="product.images.length > 0" [changeImg]="product.images[0]"></app-img>
 <h2 style="color: red" appHighlight> {{ product.price  | currency: 'DOP ' }}</h2>
 <p  >{{ product.title }}</p>
 <button (click)="onAddToCart()" >Add Cart</button>

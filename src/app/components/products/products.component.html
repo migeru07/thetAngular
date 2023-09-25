@@ -1,9 +1,15 @@
 <p>Tienes {{ myShoppingCart.length }} productos y la cuenta total es {{ total }}</p>
-<p>Usando pipes: {{ ('hOlA eN LoWeRCase' | lowercase) | convertVowels }}</p>
+<!-- <p>Usando pipes: {{ ('hOlA eN LoWeRCase' | lowercase) | convertVowels }}</p> -->
 <div class="products--grid">
   <app-product
   *ngFor="let product of products"
   [product]="product"
   (addedProduct)="onAddToShoppingCart($event)"
   ></app-product>
+</div>
+<div class="product-detail">
+  <div>
+    <button>Close</button>
+    Content
+  </div>
 </div>
