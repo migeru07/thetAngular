@@ -8,6 +8,11 @@ import { Product } from 'src/app/models/product.model';
 })
 export class ProductsComponent {
 
+  myShoppingCart: Product[] = [];
+
+  onAddToShoppingCart(product: Product) {
+    this.myShoppingCart.push(product);
+  }
 
   products: Product[] = [
     {
