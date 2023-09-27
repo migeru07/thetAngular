@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CreateProductDTO, Product } from 'src/app/models/product.model';
+import { CreateProductDTO, Product, UpdateProductDTO } from 'src/app/models/product.model';
 import { StoreService } from 'src/app/services/store.service';
 import { ProductsService } from 'src/app/services/products.service';
 
@@ -57,13 +57,28 @@ export class ProductsComponent implements OnInit {
     const product: CreateProductDTO = {
       title: 'Camisa Force Slim Fit',
       description: 'Bella Camisa blanca con los brazos  cruzados y que el usuario no se puede quitar',
-      images: [`{https://placeimg.com/640/480/any?random=${Math.random()}`],
+      images: [`https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Modelo_en_camisa_de_fuerza.jpg/800px-Modelo_en_camisa_de_fuerza.jpg`],
       price: 2303,
       categoryId: 2
     }
     this.productsService.create(product)
     .subscribe(data => {
       this.products.unshift(data)
+    });
+  }
+
+  updateProduct() {
+    const changes: UpdateProductDTO ={
+      price: 2000
+    }
+    const id = this.productChosen.id;
+    this.productsService.update(id, changes)
+    .subscribe( data => {
+      const productIndex = this.products.findIndex(
+        item => item.id === this.productChosen.id
+      );
+      this.products[productIndex] = data;
+      this.productChosen = data;
     });
   }
 
