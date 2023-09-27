@@ -1,6 +1,6 @@
 <p>Tienes {{ myShoppingCart.length }} productos y la cuenta total es {{ total }}</p>
 <!-- <p>Usando pipes: {{ ('hOlA eN LoWeRCase' | lowercase) | convertVowels }}</p> -->
-<button (click)="toggleProductDetail()" >Ver detalle</button>
+<button (click)="createNewProduct()" >Crear Producto</button>
 <div class="products--grid">
   <app-product
   *ngFor="let product of products"

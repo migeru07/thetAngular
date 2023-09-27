@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from 'src/app/models/product.model';
+import { CreateProductDTO, Product } from 'src/app/models/product.model';
 import { StoreService } from 'src/app/services/store.service';
 import { ProductsService } from 'src/app/services/products.service';
 
@@ -51,6 +51,20 @@ export class ProductsComponent implements OnInit {
       this.toggleProductDetail();
       this.productChosen = data;
     })
+  }
+
+  createNewProduct() {
+    const product: CreateProductDTO = {
+      title: 'Camisa Force Slim Fit',
+      description: 'Bella Camisa blanca con los brazos  cruzados y que el usuario no se puede quitar',
+      images: [`{https://placeimg.com/640/480/any?random=${Math.random()}`],
+      price: 2303,
+      categoryId: 2
+    }
+    this.productsService.create(product)
+    .subscribe(data => {
+      this.products.unshift(data)
+    });
   }
 
 
